@@ -25,6 +25,9 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/p
 git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM}/themes/powerlevel10k
 
+# Update plugins section in .zshrc
+sed -i '/^plugins=(git)$/c\plugins=(git zsh-syntax-highlighting zsh-autosuggestions)' ~/.zshrc
+
 # Download and apply the Powerlevel10k configuration from the public repo
 P10K_CONFIG_REPO="https://raw.githubusercontent.com/init5god/server_config/refs/heads/main/.pk10.zsh"
 wget -O ~/.p10k.zsh $P10K_CONFIG_REPO
